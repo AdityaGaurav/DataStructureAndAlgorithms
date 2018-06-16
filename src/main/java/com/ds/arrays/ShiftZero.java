@@ -24,9 +24,19 @@ public class ShiftZero {
         return nums;
     }
 
+    static int[] shiftZeros(int[] input) {
+        int index = 0;
+        for (int i : input) {
+            if (i != 0) input[index++] = i;
+        }
+        while (index < input.length)
+            input[index++] = 0;
+        return input;
+    }
+
     public static void main(String[] args) {
         int[] input = {0, 0, 1, 6, 0, 2, 0, 0, 0, 19 / 89, 1, 0, 23, 0};
-        for (int i : shiftZero(input)) {
+        for (int i : shiftZeros(input)) {
             System.out.println(i);
         }
     }
